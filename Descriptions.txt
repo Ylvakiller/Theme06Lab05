@@ -1,0 +1,47 @@
+/**
+ * This file will hold all the descriptions as found on blackboard, including remarks
+ */
+ 
+ /*
+ * Description as found on blackboard:
+ * 1. Write a program that searches a file of numbers and displays the largest number, 
+ * the smallest number, and the average of all the numbers in the file. 
+ * Do not assume that the numbers in the file are in any special order. 
+ * Your program should obtain the file name from the user. 
+ * Use either a text file or a binary file. 
+ * For the text-file version, assume one number per line. 
+ * For the binary-file version, use numbers of type double that are written using writeDouble.
+ */
+
+/*
+ * Remarks as found on blackboard:
+ * 10.1; p.772:
+ * We are only dealing with text files. 
+ * First write in notepad or word or any other textprocessing software a file that actually only contains various numbers. 
+ * Save this file in *.txt format.
+ * Ask the user for a textfile, open it and read all the numbers that are available.
+ * For examples on opening and reading text files see listing 10.2 p. 724-725 (5th ed.) or p 772 (6th ed.)
+ */
+ 
+ /*
+ * Description as found on blackboard:
+ * 2. Write a program that reads a file of numbers of type int and writes all the numbers to another file, 
+ * but without any duplicate numbers. 
+ * Assume that the numbers in the input file are already ordered from smallest to largest. 
+ * After the program is run, the new file will contain all the numbers in the original file, 
+ * but no number will appear more than once in the file. 
+ * The numbers in the output file should also be sorted from smallest to largest. 
+ * Your program should obtain both file names from the user. 
+ * Use either a text file or a binary file. 
+ * For the text-file version, assume one number per line. 
+ * For the binary-file version, use numbers of type int that are written using writeInt.
+ */
+
+/*
+ * Remakrs as found on blackboard:
+ * 10.2; p. 772:
+ * Again write a text file that contains numbers in order from smallest to largest but with several duplicate numbers.
+ * Ask the user for the text file, open it, read it and duplicate the numbers in a different file. 
+ * For examples on how to create and write into a file see listing 10.1 p. 718 (5th ed.) or p766-766 (6th ed.).
+ * If you want you can combine project 10.1 and 10.2 into one big program that does all of the mentioned things.
+ */
