@@ -43,6 +43,14 @@ public class FileActions {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * This will close the input stream, should always be run after you are done reading the file
+	 */
+	public void closeStream(){
+		readStream.close();
+	}
+	
+	
 	
 	
 }
