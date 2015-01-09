@@ -38,7 +38,7 @@
  */
 
 /*
- * Remakrs as found on blackboard:
+ * Remarks as found on blackboard:
  * 10.2; p. 772:
  * Again write a text file that contains numbers in order from smallest to largest but with several duplicate numbers.
  * Ask the user for the text file, open it, read it and duplicate the numbers in a different file. 
