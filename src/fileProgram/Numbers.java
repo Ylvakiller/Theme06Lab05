@@ -52,7 +52,6 @@ public class Numbers {
 	 * @param toAdd the number to add to the array
 	 */
 	private static void addIntToArray(int toAdd){
-		//System.out.println("Adding number " + toAdd);
 		int i = 0;
 		if (sortedInt.isEmpty()){
 			sortedInt.add(toAdd);//add first element to the array
@@ -68,8 +67,6 @@ public class Numbers {
 						int temp = sortedInt.get(i);
 						sortedInt.set(i, toAdd);
 						toAdd = temp;
-						//System.out.println("temp" + temp);
-						//System.out.println("i " + i);
 						i++;
 					}
 					sortedInt.add(toAdd);	//add the last number to the arrayList, as such increasing the size by one
