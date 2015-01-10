@@ -21,10 +21,6 @@ public class Numbers {
 	 */
 	private int[] sortedint;
 	/**
-	 * This is the instance of the FileActions class that is needed for this program
-	 */
-	private FileActions file;
-	/**
 	 * The total amount of numbers that this class has come across
 	 */
 	private int amountOfNumbers;
