@@ -52,6 +52,7 @@ public class FileActions {
 	
 	/**
 	 * Will read an int from the input stream and return that
+	 * Hint, make sure that there is an int type next in the stream with the hasNextInt method
 	 * @return the next int on the input stream
 	 */
 	public int readInt(){
