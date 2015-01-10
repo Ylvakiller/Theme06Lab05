@@ -42,6 +42,7 @@ public class Numbers {
 		}
 		amountOfNumbers++;
 		total.add(BigInteger.valueOf(unprocessed));
+		addIntToArray(unprocessed);
 	}
 	
 	/**
