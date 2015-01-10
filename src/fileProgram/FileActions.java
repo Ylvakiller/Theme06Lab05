@@ -14,11 +14,11 @@ public class FileActions {
 	/**
 	 * This is the file object, is initialized during construction
 	 */
-	public File currentFile;
+	private File currentFile;
 	/**
 	 * This will be the stream, has to be opened
 	 */
-	public Scanner readStream;
+	private Scanner readStream;
 	/**
 	 * Default constructor, sets the file to open to be test.txt in the project folder
 	 */
@@ -57,6 +57,22 @@ public class FileActions {
 	public int readInt(){
 		return readStream.nextInt();
 	}
+	/**
+	 * Will check if there is another line in the stream
+	 * @return true if there is another line in the stream
+	 */
+	public boolean hasNextLine(){
+		return readStream.hasNextLine();
+	}
+	/**
+	 * Will check if the stream has an int value as next token,
+	 * Should only be run if the hasNextLine() method returns true
+	 * @return true if the next token is an int
+	 */
+	public boolean hasNextInt(){
+		return readStream.hasNextInt();
+	}
+	
 	
 	
 	
