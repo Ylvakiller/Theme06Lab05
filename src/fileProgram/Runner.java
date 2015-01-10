@@ -22,7 +22,36 @@ public class Runner {
 		System.out.println(FileActions.fileExcists());
 		FileActions.openStream();
 		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
 		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.printArray();
+		System.out.println();
+		FileActions.closeStream();
 	}
 
 }
