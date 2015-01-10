@@ -14,11 +14,11 @@ public class FileActions {
 	/**
 	 * This is the file object, is initialized during construction
 	 */
-	private File currentFile;
+	private static File currentFile;
 	/**
 	 * This will be the stream, has to be opened
 	 */
-	private Scanner readStream;
+	private static Scanner readStream;
 	/**
 	 * Default constructor, sets the file to open to be test.txt in the project folder
 	 */
@@ -29,13 +29,13 @@ public class FileActions {
 	/*
 	 * Will check if the file in this object exists
 	 */
-	public boolean fileExcists(){
+	public static boolean fileExcists(){
 		return currentFile.exists();
 	}
 	/**
 	 * Will open the stream, should only be run if fileExcists() returns true
 	 */
-	public void openStream(){
+	public static void openStream(){
 		try {
 			readStream = new Scanner(currentFile);
 		} catch (FileNotFoundException e) {
@@ -46,7 +46,7 @@ public class FileActions {
 	/**
 	 * This will close the input stream, should always be run after you are done reading the file
 	 */
-	public void closeStream(){
+	public static void closeStream(){
 		readStream.close();
 	}
 	
@@ -55,14 +55,14 @@ public class FileActions {
 	 * Hint, make sure that there is an int type next in the stream with the hasNextInt method
 	 * @return the next int on the input stream
 	 */
-	public int readInt(){
+	public static int readInt(){
 		return readStream.nextInt();
 	}
 	/**
 	 * Will check if there is another line in the stream
 	 * @return true if there is another line in the stream
 	 */
-	public boolean hasNextLine(){
+	public static boolean hasNextLine(){
 		return readStream.hasNextLine();
 	}
 	/**
@@ -70,7 +70,7 @@ public class FileActions {
 	 * Should only be run if the hasNextLine() method returns true
 	 * @return true if the next token is an int
 	 */
-	public boolean hasNextInt(){
+	public static boolean hasNextInt(){
 		return readStream.hasNextInt();
 	}
 	
