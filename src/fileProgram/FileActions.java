@@ -50,6 +50,15 @@ public class FileActions {
 		readStream.close();
 	}
 	
+	/**
+	 * Will read an int from the input stream and return that
+	 * @return the next int on the input stream
+	 */
+	public int readInt(){
+		return readStream.nextInt();
+	}
+	
+	
 	
 	
 	

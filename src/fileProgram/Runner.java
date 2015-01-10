@@ -14,6 +14,10 @@ public class Runner {
 	public static void main(String[] args) {
 		FileActions test = new FileActions();
 		System.out.println(test.fileExcists());
+		test.openStream();
+		System.out.println(test.readInt());
+		System.out.println(test.readInt());
+		test.closeStream();
 	}
 
 }
