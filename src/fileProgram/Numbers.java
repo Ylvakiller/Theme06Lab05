@@ -28,4 +28,27 @@ public class Numbers {
 	 * the sum of all the numbers that this class has come across
 	 */
 	private BigInteger total;
+	
+	/**
+	 * This method will process the given int
+	 * @param unprocessed
+	 */
+	public void processInt(int unprocessed){
+		if (unprocessed<smallestNumber){
+			smallestNumber = unprocessed;
+		}
+		if (unprocessed>largestNumber){
+			largestNumber = unprocessed;
+		}
+		amountOfNumbers++;
+		total.add(BigInteger.valueOf(unprocessed));
+	}
+	
+	/**
+	 * This will add the given input to the array if that number is not already in the array
+	 * @param toAdd the number to add to the array
+	 */
+	private void addIntToArray(int toAdd){
+		
+	}
 }
