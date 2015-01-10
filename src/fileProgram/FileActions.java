@@ -26,6 +26,9 @@ public class FileActions {
 		currentFile = new File("test.txt");
 	}
 	
+	public static void setFile(String fileLocation){
+		currentFile = new File(fileLocation);
+	}
 	/*
 	 * Will check if the file in this object exists
 	 */

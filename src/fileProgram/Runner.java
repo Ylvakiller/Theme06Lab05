@@ -12,12 +12,14 @@ package fileProgram;
 public class Runner {
 
 	public static void main(String[] args) {
-		FileActions test = new FileActions();
+		/*FileActions test = new FileActions();
 		System.out.println(test.fileExcists());
 		test.openStream();
 		System.out.println(test.readInt());
 		System.out.println(test.readInt());
-		test.closeStream();
+		test.closeStream();*/
+		FileActions.setFile("test.txt");
+		System.out.println(FileActions.fileExcists());
 	}
 
 }
