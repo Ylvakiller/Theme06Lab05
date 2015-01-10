@@ -20,6 +20,9 @@ public class Runner {
 		test.closeStream();*/
 		FileActions.setFile("test.txt");
 		System.out.println(FileActions.fileExcists());
+		FileActions.openStream();
+		Numbers.processInt(FileActions.readInt());
+		Numbers.processInt(FileActions.readInt());
 	}
 
 }

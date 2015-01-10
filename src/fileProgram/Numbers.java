@@ -1,6 +1,7 @@
 package fileProgram;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 /**
  * This class is meant to do all the calculations for different parts of this file program
@@ -19,7 +20,7 @@ public class Numbers {
 	/**
 	 * An array with all the numbers sorted from low to high, with no number occurring twice
 	 */
-	private static int[] sortedInt;
+	private static ArrayList<Integer> sortedInt = new ArrayList<Integer>();
 	/**
 	 * The total amount of numbers that this class has come across
 	 */
@@ -27,8 +28,8 @@ public class Numbers {
 	/**
 	 * the sum of all the numbers that this class has come across
 	 */
-	private static BigInteger total;
-	
+	private static BigInteger total = BigInteger.ZERO;
+
 	/**
 	 * This method will process the given int
 	 * @param unprocessed
@@ -44,25 +45,29 @@ public class Numbers {
 		total.add(BigInteger.valueOf(unprocessed));
 		addIntToArray(unprocessed);
 	}
-	
+
 	/**
 	 * This will add the given input to the array if that number is not already in the array
 	 * @param toAdd the number to add to the array
 	 */
 	private static void addIntToArray(int toAdd){
 		int i = 0;
-		while(sortedInt[i]<toAdd&&i<sortedInt.length){	//this will go to the place in the array where the number to add has to be
-			i++;
-		}
-		if (sortedInt[i]!=toAdd){//this will check if the number is already in the array
-			while (i<sortedInt.length){	//this should move all the variables up one place in the array until the array is done
-				int temp = sortedInt[i];
-				sortedInt[i] = toAdd;
-				toAdd = temp;
+		if (sortedInt.isEmpty()){
+			sortedInt.add(toAdd);//add first element to the array
+		}else{
+			while(sortedInt.get(i)<toAdd&&i+1<sortedInt.size()){	//this will go to the place in the array where the number to add has to be
 				i++;
 			}
-			sortedInt[i] = toAdd;	//add the last number to the array, as such increasing the size by one
+			if (sortedInt.get(i)!=toAdd){//this will check if the number is already in the array
+				while (i<sortedInt.size()){	//this should move all the variables up one place in the arraylist until the array is done
+					int temp = sortedInt.get(i);
+					sortedInt.set(i, toAdd);
+					toAdd = temp;
+					i++;
+				}
+				sortedInt.add(toAdd);	//add the last number to the arrayList, as such increasing the size by one
+			}
 		}
-		
+
 	}
 }
