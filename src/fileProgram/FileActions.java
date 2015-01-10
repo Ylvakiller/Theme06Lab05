@@ -14,7 +14,11 @@ public class FileActions {
 	/**
 	 * This is the file object, is initialized during construction
 	 */
-	private static File currentFile;
+	private static File readFile;
+	/**
+	 * This is the file object, is initialized during construction
+	 */
+	private static File writeFile;
 	/**
 	 * This will be the stream, has to be opened
 	 */
@@ -23,24 +27,25 @@ public class FileActions {
 	 * Default constructor, sets the file to open to be test.txt in the project folder
 	 */
 	public FileActions(){
-		currentFile = new File("test.txt");
+		readFile = new File("Read.txt");
+		writeFile = new File("Write.txt");
 	}
 	
 	public static void setFile(String fileLocation){
-		currentFile = new File(fileLocation);
+		readFile = new File(fileLocation);
 	}
 	/*
 	 * Will check if the file in this object exists
 	 */
 	public static boolean fileExcists(){
-		return currentFile.exists();
+		return readFile.exists();
 	}
 	/**
 	 * Will open the stream, should only be run if fileExcists() returns true
 	 */
 	public static void openStream(){
 		try {
-			readStream = new Scanner(currentFile);
+			readStream = new Scanner(readFile);
 		} catch (FileNotFoundException e) {
 			System.err.println("Error opening the file!");
 			e.printStackTrace();

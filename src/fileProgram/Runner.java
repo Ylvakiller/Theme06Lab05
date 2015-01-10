@@ -12,46 +12,16 @@ package fileProgram;
 public class Runner {
 
 	public static void main(String[] args) {
-		/*FileActions test = new FileActions();
-		System.out.println(test.fileExcists());
-		test.openStream();
-		System.out.println(test.readInt());
-		System.out.println(test.readInt());
-		test.closeStream();*/
-		FileActions.setFile("test.txt");
+		FileActions.setFile("Read.txt");
 		System.out.println(FileActions.fileExcists());
 		FileActions.openStream();
+		while (FileActions.hasNextLine()&&FileActions.hasNextInt()){
 		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
-		Numbers.printArray();
-		System.out.println();
-		Numbers.processInt(FileActions.readInt());
+		}
 		Numbers.printArray();
 		System.out.println();
 		FileActions.closeStream();
+		System.exit(0);
 	}
 
 }
