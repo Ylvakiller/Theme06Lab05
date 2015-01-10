@@ -2,6 +2,7 @@ package fileProgram;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -12,38 +13,54 @@ import java.util.Scanner;
 public class FileActions {
 
 	/**
-	 * This is the file object, is initialized during construction
+	 * This is the object from which to read
 	 */
 	private static File readFile;
+
 	/**
-	 * This is the file object, is initialized during construction
+	 * This is the object from which to write
 	 */
 	private static File writeFile;
 	/**
 	 * This will be the stream, has to be opened
 	 */
 	private static Scanner readStream;
+	private static PrintWriter writeStream;
 	/**
-	 * Default constructor, sets the file to open to be test.txt in the project folder
+	 * Default constructor, sets the file default files
 	 */
 	public FileActions(){
 		readFile = new File("Read.txt");
 		writeFile = new File("Write.txt");
 	}
 	
+	/**
+	 * @return the readFile
+	 */
+	public static File getReadFile() {
+		return readFile;
+	}
+
+	/**
+	 * @return the writeFile
+	 */
+	public static File getWriteFile() {
+		return writeFile;
+	}
+
 	public static void setFile(String fileLocation){
 		readFile = new File(fileLocation);
 	}
 	/*
 	 * Will check if the file in this object exists
 	 */
-	public static boolean fileExcists(){
-		return readFile.exists();
+	public static boolean fileExcists(File fileToCheck){
+		return fileToCheck.exists();
 	}
 	/**
 	 * Will open the stream, should only be run if fileExcists() returns true
 	 */
-	public static void openStream(){
+	public static void openReadStream(){
 		try {
 			readStream = new Scanner(readFile);
 		} catch (FileNotFoundException e) {
@@ -54,10 +71,18 @@ public class FileActions {
 	/**
 	 * This will close the input stream, should always be run after you are done reading the file
 	 */
-	public static void closeStream(){
+	public static void closeReadStream(){
 		readStream.close();
 	}
 	
+	public static void openWriteStream(){
+		try {
+			writeStream = new PrintWriter(writeFile);
+		} catch (FileNotFoundException e) {
+			System.err.println("Error opening the file!");
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * Will read an int from the input stream and return that
 	 * Hint, make sure that there is an int type next in the stream with the hasNextInt method

@@ -13,14 +13,14 @@ public class Runner {
 
 	public static void main(String[] args) {
 		FileActions.setFile("Read.txt");
-		System.out.println(FileActions.fileExcists());
-		FileActions.openStream();
+		System.out.println(FileActions.fileExcists(FileActions.getReadFile()));
+		FileActions.openReadStream();
 		while (FileActions.hasNextLine()&&FileActions.hasNextInt()){
 		Numbers.processInt(FileActions.readInt());
 		}
 		Numbers.printArray();
 		System.out.println();
-		FileActions.closeStream();
+		FileActions.closeReadStream();
 		System.exit(0);
 	}
 
