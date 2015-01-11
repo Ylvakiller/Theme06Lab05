@@ -10,6 +10,10 @@ import java.util.ArrayList;
  */
 public class Numbers {
 	/**
+	 * This boolean is meant to make sure that we set the smallest and largest number correctly no matter what kind of values in the text file
+	 */
+	private static boolean firstNumber = true;
+	/**
 	 * The smallest number that this instance of this class has come across
 	 */
 	private static int smallestNumber;
@@ -36,11 +40,17 @@ public class Numbers {
 	 * @param unprocessed
 	 */
 	public static void processInt(int unprocessed){
-		if (unprocessed<smallestNumber){
-			smallestNumber = unprocessed;
-		}
-		if (unprocessed>largestNumber){
+		if (firstNumber){
+			smallestNumber = unprocessed;//first number so we do not need to compare
 			largestNumber = unprocessed;
+			firstNumber = false;//tell the program that we have processed the first number and we can now start comparing
+		}else{
+			if (unprocessed<smallestNumber){
+				smallestNumber = unprocessed;
+			}
+			if (unprocessed>largestNumber){
+				largestNumber = unprocessed;
+			}
 		}
 		amountOfNumbers++;
 		total.add(BigInteger.valueOf(unprocessed));

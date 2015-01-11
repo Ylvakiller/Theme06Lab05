@@ -18,10 +18,9 @@ public class Runner {
 		while (FileActions.hasNextLine()&&FileActions.hasNextInt()){
 		Numbers.processInt(FileActions.readInt());
 		}
-		Numbers.printArray();
-		System.out.println();
 		FileActions.closeReadStream();
-		
+		System.out.println("The largest number is :" + Numbers.getLargestNumber());
+		System.out.println("The smallest number is :" + Numbers.getSmallestNumber());
 		FileActions.setWriteFile("Write.txt");
 		FileActions.openWriteStream();
 		Numbers.writeArray();
