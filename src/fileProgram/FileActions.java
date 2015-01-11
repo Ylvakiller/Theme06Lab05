@@ -51,8 +51,19 @@ public class FileActions {
 		return writeFile;
 	}
 
-	public static void setFile(String fileLocation){
+	/**
+	 * Sets the location of the file from which you need to read
+	 * @param fileLocation the location of the file to be read from, has to exist
+	 */
+	public static void setReadFile(String fileLocation){
 		readFile = new File(fileLocation);
+	}
+	/**
+	 * Sets the location of the file to which you want to write
+	 * @param fileLocationthe location of the file to be written to
+	 */
+	public static void setWriteFile(String fileLocation){
+		writeFile = new File(fileLocation);
 	}
 	/*
 	 * Will check if the file in this object exists
@@ -116,11 +127,11 @@ public class FileActions {
 		return readStream.hasNextInt();
 	}
 	/**
-	 * Will write an int to the write stream
+	 * Will write an int to the write stream, and then end the line
 	 * @param toWrite the int to write
 	 */
 	public static void writeInt(int toWrite){
-		writeStream.print(toWrite);
+		writeStream.println(toWrite);
 	}
 	
 	

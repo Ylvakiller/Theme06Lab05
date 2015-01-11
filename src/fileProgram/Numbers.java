@@ -106,4 +106,14 @@ public class Numbers {
 			i++;
 		}
 	}
+	/**
+	 * Will write the contents of the array to the write file
+	 */
+	public static void writeArray(){
+		int i = 0;
+		while (i<sortedInt.size()){
+			FileActions.writeInt(sortedInt.get(i));
+			i++;
+		}
+	}
 }

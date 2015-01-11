@@ -12,7 +12,7 @@ package fileProgram;
 public class Runner {
 
 	public static void main(String[] args) {
-		FileActions.setFile("Read.txt");
+		FileActions.setReadFile("Read.txt");
 		System.out.println(FileActions.fileExcists(FileActions.getReadFile()));
 		FileActions.openReadStream();
 		while (FileActions.hasNextLine()&&FileActions.hasNextInt()){
@@ -22,6 +22,10 @@ public class Runner {
 		System.out.println();
 		FileActions.closeReadStream();
 		
+		FileActions.setWriteFile("Write.txt");
+		FileActions.openWriteStream();
+		Numbers.writeArray();
+		FileActions.closeWriteStream();
 		System.exit(0);
 	}
 
