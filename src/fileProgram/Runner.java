@@ -21,6 +21,7 @@ public class Runner {
 		Numbers.printArray();
 		System.out.println();
 		FileActions.closeReadStream();
+		
 		System.exit(0);
 	}
 

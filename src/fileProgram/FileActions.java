@@ -22,9 +22,12 @@ public class FileActions {
 	 */
 	private static File writeFile;
 	/**
-	 * This will be the stream, has to be opened
+	 * The read stream, has to be opened
 	 */
 	private static Scanner readStream;
+	/**
+	 * This is the write stream
+	 */
 	private static PrintWriter writeStream;
 	/**
 	 * Default constructor, sets the file default files
@@ -84,6 +87,12 @@ public class FileActions {
 		}
 	}
 	/**
+	 * Will close the write stream, should always be done when you are ready with the file
+	 */
+	public static void closeWriteStream(){
+		writeStream.close();
+	}
+	/**
 	 * Will read an int from the input stream and return that
 	 * Hint, make sure that there is an int type next in the stream with the hasNextInt method
 	 * @return the next int on the input stream
@@ -105,6 +114,13 @@ public class FileActions {
 	 */
 	public static boolean hasNextInt(){
 		return readStream.hasNextInt();
+	}
+	/**
+	 * Will write an int to the write stream
+	 * @param toWrite the int to write
+	 */
+	public static void writeInt(int toWrite){
+		writeStream.print(toWrite);
 	}
 	
 	
