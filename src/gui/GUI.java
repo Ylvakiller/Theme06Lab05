@@ -110,7 +110,7 @@ public class GUI extends JPanel
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = fc.getSelectedFile();
                 log.append("Saving the data to: " + file.getName() + "." + newline);
-                FileActions.setWriteFile("Write.txt");
+                FileActions.setWriteFile(file);
         		FileActions.openWriteStream();
         		Numbers.writeArray();
         		FileActions.closeWriteStream();

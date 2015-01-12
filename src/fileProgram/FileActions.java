@@ -72,6 +72,13 @@ public class FileActions {
 	public static void setWriteFile(String fileLocation){
 		writeFile = new File(fileLocation);
 	}
+	/**
+	 * Sets the file to which needs to be written
+	 * @param writeFile the type file to which you want to write
+	 */
+	public static void setWriteFile(File writeFile){
+		FileActions.writeFile = writeFile;
+	}
 	/*
 	 * Will check if the file in this object exists
 	 */
