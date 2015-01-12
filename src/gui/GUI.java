@@ -61,6 +61,7 @@ public class GUI extends JPanel
     JButton openButton, saveButton;
     public static JTextArea log;
     JFileChooser fc;
+    boolean started = false;
  
     public GUI() {
         super(new BorderLayout());
@@ -100,17 +101,18 @@ public class GUI extends JPanel
                 File file = fc.getSelectedFile();
                 log.append("Opening: " + file.getName() + "." + newline);
                 FileActions.setReadFile(file);
-                if (FileActions.fileExcists(FileActions.getReadFile())){
-                	//make sure that the file is correctely set
+                if (FileActions.fileExcists(FileActions.getReadFile())){//make sure that the file is correctly set in the FileActions class
+                	
                 	log.append("Opened the file, processing." + newline);
                 	FileActions.openReadStream();
             		while (FileActions.hasNextLine()&&FileActions.hasNextInt()){
             		Numbers.processInt(FileActions.readInt());
             		}
             		FileActions.closeReadStream();
-            		log.append("The largest number is : " + Numbers.getLargestNumber() + newline);
-            		log.append("The smallest number is : " + Numbers.getSmallestNumber() + newline);
-            		log.append("The average is : " + Numbers.calculateAverage() + newline);
+            		log.append(newline+"The largest number is : " + Numbers.getLargestNumber() + "." + newline);
+            		log.append("The smallest number is : " + Numbers.getSmallestNumber() + "." + newline);
+            		log.append("The average is : " + Numbers.calculateAverage() + "." + newline + newline);
+            		started = true;
                 }
             } else {
                 log.append("Open command cancelled by user." + newline);
@@ -118,12 +120,16 @@ public class GUI extends JPanel
             log.setCaretPosition(log.getDocument().getLength());
  
         //Handle save button action.
-        } else if (e.getSource() == saveButton) {
+        } else if (e.getSource() == saveButton&&started) {
             int returnVal = fc.showSaveDialog(GUI.this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = fc.getSelectedFile();
-                //This is where a real application would save the file.
-                log.append("Saving: " + file.getName() + "." + newline);
+                log.append("Saving the data to: " + file.getName() + "." + newline);
+                FileActions.setWriteFile("Write.txt");
+        		FileActions.openWriteStream();
+        		Numbers.writeArray();
+        		FileActions.closeWriteStream();
+        		log.append("Done saving." + newline);
             } else {
                 log.append("Save command cancelled by user." + newline);
             }
