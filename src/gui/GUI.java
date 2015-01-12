@@ -46,18 +46,17 @@ public class GUI extends JPanel
      */
     private static boolean started = false;
     /**
-     * Constructor, takes care of making the GUI and adding the actionlisteners etc
+     * Constructor, takes care of making the GUI and adding the action listeners etc
      */
     public GUI() {
         super(new BorderLayout());
-        //Create the log first, because the action listeners
-        //need to refer to it.
+        //create the log first, because the action listeners need to refer to it.
         log = new JTextArea(5,20);
         log.setMargin(new Insets(5,5,5,5));
         log.setEditable(false);
         JScrollPane logScrollPane = new JScrollPane(log);
         logScrollPane.setPreferredSize(new Dimension(300,400));
-        //Create a file chooser
+        //create a file chooser
         fc = new JFileChooser();
         fc.setCurrentDirectory(new File(System.getProperty("user.dir")));
  
@@ -66,19 +65,20 @@ public class GUI extends JPanel
  
         saveButton = new JButton("Save a File...");
         saveButton.addActionListener(this); //waits for a button press
-        //For layout purposes, put the buttons in a separate panel
+        //for layout purposes, put the buttons in a separate panel
         JPanel buttonPanel = new JPanel(); //use FlowLayout
         buttonPanel.add(openButton);
         buttonPanel.add(saveButton);
  
-        //Add the buttons and the log to this panel.
+        //add the buttons and the log to this panel.
         add(buttonPanel, BorderLayout.PAGE_START);
         add(logScrollPane, BorderLayout.CENTER);
+        log.append("To start please open a file." + newline);
     }
  
     public void actionPerformed(ActionEvent e) {
  
-        //Handle open button action.
+        //handle open button action.
         if (e.getSource() == openButton) {
             int returnVal = fc.showOpenDialog(GUI.this);
  
@@ -94,9 +94,9 @@ public class GUI extends JPanel
             		Numbers.processInt(FileActions.readInt());
             		}
             		FileActions.closeReadStream();
-            		log.append(newline+"The largest number is : " + Numbers.getLargestNumber() + "." + newline);
-            		log.append("The smallest number is : " + Numbers.getSmallestNumber() + "." + newline);
-            		log.append("The average is : " + Numbers.calculateAverage() + "." + newline + newline);
+            		log.append(newline+"The largest number is : " + Numbers.getLargestNumber() + newline);	//these do not end with a . sign because they are numbers and that looked confusing 
+            		log.append("The smallest number is : " + Numbers.getSmallestNumber() + newline);
+            		log.append("The average is : " + Numbers.calculateAverage() + newline + newline);
             		started = true;
                 }
             } else {
@@ -104,7 +104,7 @@ public class GUI extends JPanel
             }
             log.setCaretPosition(log.getDocument().getLength());
  
-        //Handle save button action.
+        //handle save button action.
         } else if (e.getSource() == saveButton&&started) {
             int returnVal = fc.showSaveDialog(GUI.this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -128,14 +128,14 @@ public class GUI extends JPanel
      * event dispatch thread.
      */
     public static void createAndShowGUI() {
-        //Create and set up the window.
-        JFrame frame = new JFrame("FileChooserDemo");
+        //create and set up the window.
+        JFrame frame = new JFrame("NumberFileProgram");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
-        //Add content to the window.
+        //add content to the window.
         frame.add(new GUI());
  
-        //Display the window.
+        //display the window.
         frame.pack();
         frame.setVisible(true);
     }
