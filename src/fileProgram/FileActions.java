@@ -55,7 +55,7 @@ public class FileActions {
 	 * Sets the location of the file from which you need to read
 	 * @param fileLocation the location of the file to be read from, has to exist
 	 */
-	public static void setReadFile(String fileLocation){
+	public static void setReadFile(String fileLocation){		//is currently obsolete since I use the setReadFile(File) method
 		readFile = new File(fileLocation);
 	}
 	/**
@@ -67,9 +67,9 @@ public class FileActions {
 	}
 	/**
 	 * Sets the location of the file to which you want to write
-	 * @param fileLocationthe location of the file to be written to
+	 * @param fileLocation the location of the file to be written to
 	 */
-	public static void setWriteFile(String fileLocation){
+	public static void setWriteFile(String fileLocation){	//is currently obsolete since I use the setWriteFile(File) method
 		writeFile = new File(fileLocation);
 	}
 	/**
