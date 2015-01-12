@@ -59,6 +59,13 @@ public class FileActions {
 		readFile = new File(fileLocation);
 	}
 	/**
+	 * Sets the file to be read
+	 * @param readFile a type file from which you want to read
+	 */
+	public static void setReadFile(File readFile){
+		FileActions.readFile = readFile;
+	}
+	/**
 	 * Sets the location of the file to which you want to write
 	 * @param fileLocationthe location of the file to be written to
 	 */

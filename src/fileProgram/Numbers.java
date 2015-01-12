@@ -53,7 +53,7 @@ public class Numbers {
 			}
 		}
 		amountOfNumbers++;
-		total.add(BigInteger.valueOf(unprocessed));
+		total = total.add(BigInteger.valueOf(unprocessed));
 		addIntToArray(unprocessed);
 	}
 
@@ -125,5 +125,14 @@ public class Numbers {
 			FileActions.writeInt(sortedInt.get(i));
 			i++;
 		}
+	}
+	
+	/**
+	 * Will calculate the average of all the numbers and display that
+	 * @return the average of all the numbers
+	 */
+	public static double calculateAverage(){
+		System.out.println(amountOfNumbers);
+		return total.doubleValue()/(double)amountOfNumbers;
 	}
 }
